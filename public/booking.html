@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Treatment - Holistic Beauty Clinic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #48aec5;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #3c929e;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #9b4a27;
+        }
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Book Your Treatment</h1>
+        <form id="bookingForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="treatment">Select Treatment:</label>
+            <select id="treatment" name="treatment" required>
+                <option value="Laser Hair Removal">Laser Hair Removal</option>
+                <option value="Microneedling">Microneedling</option>
+                <option value="Microdermabrasion">Microdermabrasion</option>
+                <option value="Fat Lipolysis">Fat Lipolysis</option>
+                <option value="Lemon Bottle Injections">Lemon Bottle Injections</option>
+                <option value="Vitamin C Injection">Vitamin C Injection</option>
+                <option value="Vitamin B12 Injection">Vitamin B12 Injection</option>
+                <option value="Facials">Facials</option>
+                <option value="Body Massage">Body Massage</option>
+                <option value="Hair Rejuvenation">Hair Rejuvenation</option>
+                <option value="Chemical Peels">Chemical Peels</option>
+            </select>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="message">Additional Notes (Optional):</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit">Submit Booking</button>
+        </form>
+
+        <div class="confirmation" id="confirmationMessage">
+            <p>Thank you for booking your treatment! We will contact you shortly to confirm your appointment.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("bookingForm").style.display = "none";
+            document.getElementById("confirmationMessage").style.display = "block";
+        });
+    </script>
+
+</body>
+</html>
